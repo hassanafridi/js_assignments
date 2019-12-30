@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Factorial</title>
+
+    <script>
+    
+    var userin = prompt("Enter any positive number to calculate factorial");
+        var factorial = factorialize(userin);
+        console.log('factorial is ', factorial);
+        function factorialize(userin){
+            
+            var factorial = 1;
+        
+            while (userin !== 1){
+                factorial = factorial * userin--;
+            }
+            return factorial;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
