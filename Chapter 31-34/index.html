@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOB Calculator</title>
+    <script>
+       var months = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+        var name = prompt("Enter your name");
+        var date = prompt("Enter you date of birth");
+        var month = prompt("Enter your month of birth");
+        var year = prompt("Enter your year of ");
+        var currDate = new Date();
+        var hou = currDate.getHours();
+        
+        // making conditions for time-interval like noon, evening
+
+        if (hou > 0 && hou <= 6) {
+            var greet = "Good Night"}
+        else if (hou > 6 && hou < 12){
+            var greet = "Good Morning"}
+        else if (hou >= 12 && hou <= 16){
+            var greet = "Good Afternoon"}
+        else {
+            var greet = "Good Evening"}
+
+        
+        console.log("Hello ", name, " ", greet);
+        //Getting current date + specifying date of birth
+        var birthDate = new Date("" +months[month-1] +" " +date + ", " +year);
+        //Converting date into string
+        var birthDateString = birthDate.toString();
+        //Extracting timezone from string
+        var timeZone = birthDateString.indexOf("(");
+        timeZone = birthDateString.slice(timeZone + 1,birthDateString.length -1);
+        timeZone = timeZone.toLowerCase();
+        console.log("Your DOB is {in " +timeZone +" format}");
+        
+        //calculating diference between 2 dates
+        var diffMS = currDate.getTime() - birthDate.getTime();
+        var totalDays = Math.floor(diffMS / (1000 * 60 * 60 * 24));
+        
+        var years = Math.floor(diffMS / (1000 * 60 * 60 * 24 * 365 ));
+        diffMS = diffMS % (1000 * 60 * 60 * 24 * 365);
+        var months = Math.floor(diffMS / (1000 * 60 * 60 * 24 * 30)) % 12;
+        diffMS = diffMS % (1000 * 60 * 60 * 24 * 30);
+        var days = Math.floor(diffMS / (1000 * 60 * 60 * 24));
+        diffMS = diffMS % (1000 * 60 * 60 * 24);
+        var hours = Math.floor(diffMS / (1000 * 60 * 60));
+        diffMS = diffMS % (1000 * 60 * 60);
+        var minutes = Math.floor(diffMS / (1000 * 60));
+        diffMS = diffMS % (1000 * 60);
+        var seconds = Math.floor(diffMS / 1000);
+        diffMS = diffMS % 1000;
+        var milliseconds = diffMS;
+        console.log("You are " +years +" years "+months +" months " +days +" days " +hours +" hours " +minutes +" minutes " +seconds +" seconds " +milliseconds +" milliseconds old")
+        console.log("Your age in days " +totalDays); 
+
+        var nextBDay = new Date("January 8, 2020");
+        diffMS = nextBDay.getTime() - currDate.getTime();
+        var nextDays = Math.floor(diffMS / (1000 * 60 * 60 * 24));
+        diffMS = diffMS % (1000 * 60 * 60 * 24);
+        var nextHours = Math.floor(diffMS / (1000 * 60 * 60));
+        diffMS = diffMS % (1000 * 60 * 60);
+        var nextMinutes = Math.floor(diffMS / (1000 * 60));
+        diffMS = diffMS % (1000 * 60);
+        var nextSeconds = Math.floor(diffMS / 1000);
+        diffMS = diffMS % 1000;
+        var nextMilliseconds = diffMS;
+        if (currDate.getDay() === nextBDay.getDay() && currDate.getMonth() === nextBDay.getMonth()) {
+            console.log("Happy Birth Day " +name +". Today is Your " +years +"th Birthday");
+        }
+        else{
+            console.log("How much time left in your next birthday? " +nextDays +" days " +nextHours +" hours " +nextMinutes +" minutes " +nextSeconds +" seconds " +nextMilliseconds +" milliseconds.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
