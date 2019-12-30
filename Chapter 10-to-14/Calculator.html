@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chapter-10-to-14</title>
+    <script>
+    
+    alert("This calculator is made to calculate 5 times if you didn't make it right then you need to reload the page")
+
+for (var operation = 0; operation < 5; operation++){
+
+var number_2 = prompt("Enter a number to calculate");
+var number_3 = prompt("Enter another number to calculate with");
+var opt = prompt("what do you want to do. eg. \nsum +\nminus - \nmultiply * \ndivide / \npower ^ \nremainder %")
+var number_0 = parseFloat(number_2);
+var number_1 = parseFloat(number_3);
+
+    if (opt === "sum" || opt == "+"){
+        alert(number_0 + " " + opt + " " + number_1 + " = " + (number_0 + number_1));
+        break;
+    }
+    else if (opt === "minus" || opt == "-"){
+        alert(number_0 + " " + opt + " " + number_1 + " = " + (number_0 - number_1));
+        break;
+    }
+    
+    else if (opt === "multiply" || opt == "*"){
+        alert(number_0 + " " + opt + " " + number_1 + " = " + number_0 * number_1);
+        break;
+    }
+    
+    else if (opt === "divide" || opt == "/"){
+        alert(number_0 + " " + opt + " " + number_1 + " = " + number_0 / number_1);
+        break;
+    }
+
+    else if (opt === "power" || opt == "^"){
+        alert(number_0 + " " + opt + " " + number_1 + " = " + number_0 ** number_1);
+        break;
+    }
+    
+    else if (opt === "remainder" || opt == "%"){
+        alert(number_0 + " " + opt + " " + number_1 + " = " + number_0 % number_1);
+        break;
+    }
+
+    else {
+        alert("You are annoying me enter right value");
+        
+    }
+}
+
+    
+    
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
