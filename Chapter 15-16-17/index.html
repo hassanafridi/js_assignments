@@ -7,22 +7,20 @@
     <title>chapter-15-16-17</title>
     <script>
     
-    
-
-    var courses = [];
-    var editableCourses = [];
-    for (var i = 0; i < 5; i++){
-        courses.push(prompt("Enter courses name"));
-    }
-    alert('Full array: ' + courses.join(', '));
-
-
-    for (var j = 0; j < 5; j++){
-        editableCourses[j] = prompt("Enter a courses ", courses[j]);
-    }
-    alert('Full array: ' + editableCourses.join(', '));
-
-    
+var courses = [];
+courses[0] = prompt("Enter a course name")
+courses[1] = prompt("Enter a course name")
+courses[2] = prompt("Enter a course name")
+courses[3] = prompt("Enter a course name")
+courses[4] = prompt("Enter a course name")
+alert('Full array: '+courses.join(', '));
+courses[0] = prompt("Enter a course name", courses[0])
+courses[1] = prompt("Enter a course name", courses[1])
+courses[2] = prompt("Enter a course name", courses[2])
+courses[3] = prompt("Enter a course name", courses[3])
+courses[4] = prompt("Enter a course name", courses[4])
+alert('Full array: '+courses.join(', '));
+  
     
     
     
